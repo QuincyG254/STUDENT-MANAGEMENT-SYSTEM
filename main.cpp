@@ -14,7 +14,7 @@ public:
         name = n;
     }
 
-    // Setter and Getter (Encapsulation)
+    // Getter and Setter (Encapsulation)
     void setName(string n) {
         name = n;
     }
@@ -23,7 +23,7 @@ public:
         return name;
     }
 
-    // Pure virtual function (makes class abstract)
+    // Pure virtual function
     virtual void displayDetails() = 0;
 };
 
@@ -41,17 +41,8 @@ public:
         courseCode = ccode;
     }
 
-    // Getters and Setters (Encapsulation)
-    void setCourseName(string cname) {
-        courseName = cname;
-    }
-
     string getCourseName() {
         return courseName;
-    }
-
-    void setCourseCode(string ccode) {
-        courseCode = ccode;
     }
 
     string getCourseCode() {
@@ -75,23 +66,6 @@ public:
         marks = m;
     }
 
-    // Getters and Setters (Encapsulation)
-    void setStudentId(int id) {
-        studentId = id;
-    }
-
-    int getStudentId() {
-        return studentId;
-    }
-
-    void setMarks(int m) {
-        marks = m;
-    }
-
-    int getMarks() {
-        return marks;
-    }
-
     // Grade calculation
     string calculateGrade() {
         if (marks >= 70)
@@ -106,7 +80,7 @@ public:
 
     // Method Overriding (Polymorphism)
     void displayDetails() override {
-        cout << "\n--- Student Details ---" << endl;
+        cout << "---- Student Details ----" << endl;
         cout << "Student ID: " << studentId << endl;
         cout << "Name: " << name << endl;
         cout << "Course: " << course.getCourseName() << endl;
@@ -117,28 +91,16 @@ public:
 };
 
 // ===============================
-// Main Function
+// Main Function (Dummy Data Used)
 // ===============================
 int main() {
 
-    int id, marks;
-    string name, courseName, courseCode;
-
-    cout << "Enter Student ID: ";
-    cin >> id;
-    cin.ignore();
-
-    cout << "Enter Student Name: ";
-    getline(cin, name);
-
-    cout << "Enter Course Name: ";
-    getline(cin, courseName);
-
-    cout << "Enter Course Code: ";
-    getline(cin, courseCode);
-
-    cout << "Enter Marks: ";
-    cin >> marks;
+    // Dummy values
+    int id = 101;
+    string name = "Quincy Gitonga";
+    int marks = 75;
+    string courseName = "Object Oriented Programming";
+    string courseCode = "CS201";
 
     // Create objects
     Course course(courseName, courseCode);
